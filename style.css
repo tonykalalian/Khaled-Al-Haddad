@@ -1004,7 +1004,7 @@ display: none;
   
   .sidebar-info { gap: 25px; }
   
-  .avatar-box { border-radius: 500px; }
+  .avatar-box { border-radius: 20px; }
   
   .avatar-box img { width: 120px; }
   
