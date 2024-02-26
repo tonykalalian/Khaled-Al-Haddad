@@ -106,47 +106,4 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
-document.addEventListener('DOMContentLoaded', function() {
-  var projectImageLinks = document.querySelectorAll('.project-image-link');
 
-  projectImageLinks.forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      var imageSource = this.getAttribute('data-image-source');
-
-      var fullScreenImage = new Image();
-      fullScreenImage.src = imageSource;
-
-      var fullScreenContainer = document.createElement('div');
-      fullScreenContainer.className = 'full-screen-container';
-
-      fullScreenContainer.appendChild(fullScreenImage);
-      document.body.appendChild(fullScreenContainer);
-
-      if (fullScreenContainer.requestFullscreen) {
-        fullScreenContainer.requestFullscreen();
-      } else if (fullScreenContainer.mozRequestFullScreen) {
-        fullScreenContainer.mozRequestFullScreen();
-      } else if (fullScreenContainer.webkitRequestFullscreen) {
-        fullScreenContainer.webkitRequestFullscreen();
-      } else if (fullScreenContainer.msRequestFullscreen) {
-        fullScreenContainer.msRequestFullscreen();
-      }
-
-      fullScreenContainer.addEventListener('click', function() {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-          document.webkitExitFullscreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-
-        document.body.removeChild(fullScreenContainer);
-      });
-    });
-  });
-});
