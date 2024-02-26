@@ -616,8 +616,7 @@
   }
   .filter-list { display: none; }
   .filter-select-box {
-  position: relative;
-  margin-bottom: 25px;
+display: none;
   }
   .filter-select {
   background: var(--eerie-black-2);
